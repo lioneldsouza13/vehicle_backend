@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser')
 const cors = require('cors')
 const addVehicle = require('./Routes/addVehicle') 
+const inventory = require('./Routes/manageInventory')
 require('dotenv').config()
 const mongoose = require('mongoose')
 
@@ -21,7 +22,8 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended:true}))
 app.use(cors())
 
-app.use('/api',addVehicle)
+app.use('/api',addVehicle,inventory)
+
 
 app.listen(process.env.PORT,()=>{
     console.log(`Listening to PORT ${process.env.PORT}`)

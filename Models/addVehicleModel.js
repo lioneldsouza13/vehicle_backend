@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-const { required } = require('nodemon/lib/config');
 
 const addVehicleSchema = new mongoose.Schema({
     vehicleName:{
@@ -16,8 +15,7 @@ const addVehicleSchema = new mongoose.Schema({
     },
     mobile:{
         type:String,
-        required:true,
-        minlength:10
+        required:true
     },
     problem:{
         type:String,
@@ -47,6 +45,9 @@ const addVehicleSchema = new mongoose.Schema({
     deleted:{
         type:Boolean,
         default:false
+    },
+    inventory:{
+        type:Object
     }
 
 

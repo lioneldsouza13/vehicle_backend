@@ -31,7 +31,8 @@ router.patch('/vehicles/:id',async(req,res)=>{
         expectedCost:req.body.expectedCost,
         kms:req.body.kms,
         expectedFixDate:req.body.expectedFixDate,
-        pending:req.body.pending
+        pending:req.body.pending,
+        inventory:req.body.inventory
       
         }).then((response)=>{
         res.status(200).send({message:"Updated Successfully"})
