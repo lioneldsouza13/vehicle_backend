@@ -12,7 +12,7 @@ router.post('/addVehicle', async (req,res)=>{
     
 })
 router.get('/vehicles',async (req,res)=>{
-   await addVehicle.find().then((response)=>{
+   await addVehicle.find().sort({expectedFixDate:-1}).then((response)=>{
        let response1 = response.filter((data)=> !data.deleted)
         res.send(response1)
     }).catch((err)=>{
